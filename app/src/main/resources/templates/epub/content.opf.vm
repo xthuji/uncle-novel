@@ -4,7 +4,7 @@
     <meta name="cover" content="cover"/>
     <dc:title>$data.title</dc:title>
     <dc:identifier opf:scheme="uuid" id="uncle-novel-uuid">$uuid.randomUUID()</dc:identifier>
-    <dc:creator>Uncle小说</dc:creator>
+    <dc:creator>UncleNovel</dc:creator>
     <dc:publisher>公众号：书虫无书荒</dc:publisher>
     <dc:language>zh-cn</dc:language>
   </metadata>

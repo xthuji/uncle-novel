@@ -24,6 +24,7 @@ public class DownloadHistory {
   public static final int TXT = 2;
   public static final int EPUB = 3;
   public static final int MOBI = 4;
+  public static final int MD = 5;
 
   @DatabaseField(generatedId = true)
   private int id;
@@ -60,6 +61,9 @@ public class DownloadHistory {
       StringJoiner joiner = new StringJoiner(StrUtil.COMMA);
       if (wrapper.isTxt()) {
         joiner.add("TXT");
+      }
+      if (wrapper.isMd()) {
+        joiner.add("MD");
       }
       if (wrapper.isMobi()) {
         joiner.add("MOBI");

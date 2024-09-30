@@ -73,6 +73,7 @@
                 <JFXCheckBox text="TXT" fx:id="txt"/>
                 <JFXCheckBox text="EPUB" fx:id="epub"/>
                 <JFXCheckBox text="MOBI" fx:id="mobi"/>
+                <JFXCheckBox text="MD" fx:id="md"/>
               </HBox>
             </content>
           </SettingItem>

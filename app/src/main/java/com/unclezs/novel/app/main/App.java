@@ -66,7 +66,7 @@ public class App extends BaseApplication {
   public static final String FONT_CSS_FORMAT = ".root{-fx-font-family: '%s';}";
   public static final String FONT_CSS_URL = URLUtil.getURL(FONT_CSS_FILE).toExternalForm();
   public static final boolean SHOW_INFO = false;
-  public static final String NAME = "Uncle小说";
+  public static final String NAME = "UncleNovel";
   private static final String EVENT_LAUNCH = "启动应用";
   private static final String EVENT_STOP = "停止应用";
   private static final long LAUNCH_TIME = System.currentTimeMillis();
@@ -155,7 +155,7 @@ public class App extends BaseApplication {
     initStage(stage);
     stage.show();
     // 检测更新
-    UpdateUtils.checkForUpdate(stage);
+    //UpdateUtils.checkForUpdate(stage);
     MixPanelHelper.event(EVENT_LAUNCH);
     log.trace("启动耗时：{}ms", (System.currentTimeMillis() - LAUNCH_TIME));
   }

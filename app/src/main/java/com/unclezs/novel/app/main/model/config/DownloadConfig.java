@@ -39,5 +39,6 @@ public class DownloadConfig {
    */
   private ObjectProperty<Boolean> mobi = new SimpleObjectProperty<>(false);
   private ObjectProperty<Boolean> txt = new SimpleObjectProperty<>(true);
+  private ObjectProperty<Boolean> md = new SimpleObjectProperty<>(false);
   private ObjectProperty<Boolean> epub = new SimpleObjectProperty<>(false);
 }

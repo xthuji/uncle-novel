@@ -9,6 +9,7 @@ import com.unclezs.novel.app.framework.core.AppContext;
 import com.unclezs.novel.app.framework.executor.Executor;
 import com.unclezs.novel.app.framework.serialize.PropertyJsonSerializer;
 import com.unclezs.novel.app.main.core.pipeline.EbookPipeline;
+import com.unclezs.novel.app.main.core.pipeline.MarkdownPipeline;
 import com.unclezs.novel.app.main.manager.SettingManager;
 import com.unclezs.novel.app.main.model.config.DownloadConfig;
 import com.unclezs.novel.app.main.views.home.DownloadManagerView;
@@ -61,6 +62,7 @@ public class SpiderWrapper implements Serializable {
   private boolean volume;
   private boolean mobi;
   private boolean txt;
+  private boolean md;
   private boolean epub;
   /**
    * 小说名称,也是文件名称
@@ -109,6 +111,7 @@ public class SpiderWrapper implements Serializable {
     this.epub = Boolean.TRUE.equals(downloadConfig.getEpub().get());
     this.mobi = Boolean.TRUE.equals(downloadConfig.getMobi().get());
     this.txt = Boolean.TRUE.equals(downloadConfig.getTxt().get());
+    this.md = Boolean.TRUE.equals(downloadConfig.getMd().get());
     this.volume = Boolean.TRUE.equals(downloadConfig.getVolume().get());
     // 根据设置数据初始化爬虫
     initSpider();
@@ -168,6 +171,13 @@ public class SpiderWrapper implements Serializable {
       }
       if (txt) {
         TxtPipeline pipeline = new TxtPipeline();
+        pipeline.setMerge(true);
+        // 分卷文件
+        pipeline.setDeleteVolume(!volume);
+        spider.addPipeline(pipeline);
+      }
+      if (md) {
+        MarkdownPipeline pipeline = new MarkdownPipeline();
         // 合并章节
         pipeline.setMerge(true);
         // 分卷文件

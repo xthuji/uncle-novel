@@ -96,6 +96,8 @@ public class SettingView extends SidebarView<StackPane> {
   @FXML
   private JFXCheckBox mobi;
   @FXML
+  private JFXCheckBox md;
+  @FXML
   private ComboBox<Integer> taskNum;
   @FXML
   private ComboBox<Integer> threadNum;
@@ -169,6 +171,7 @@ public class SettingView extends SidebarView<StackPane> {
     epub.selectedProperty().bindBidirectional(downloadConfig.getEpub());
     txt.selectedProperty().bindBidirectional(downloadConfig.getTxt());
     mobi.selectedProperty().bindBidirectional(downloadConfig.getMobi());
+    md.selectedProperty().bindBidirectional(downloadConfig.getMd());
   }
 
   private void initHotKey() {

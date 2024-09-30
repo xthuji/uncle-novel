@@ -65,7 +65,7 @@
 然后直接运行 :app:runApp 任务即可。
 
 ```shell
-./graldew :app:runApp
+./gradlew :app:runApp
 ```
 
 ### 打包

@@ -14,7 +14,8 @@ allprojects {
     description = "Uncle Novel Project"
 
     repositories {
-        maven { url("https://oss.sonatype.org/content/groups/public/") }
+//        maven { url("https://oss.sonatype.org/content/groups/public/") }
+        maven { url("https://maven.aliyun.com/repository/public/") }
         mavenCentral()
         google()
     }

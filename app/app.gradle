@@ -9,7 +9,8 @@ def debug = "dev" == profile
 buildscript {
     repositories {
         mavenCentral()
-        maven { url("https://oss.sonatype.org/content/groups/public/") }
+//        maven { url("https://oss.sonatype.org/content/groups/public/") }
+        maven { url("https://maven.aliyun.com/repository/public/") }
     }
 }
 
@@ -26,7 +27,7 @@ dependencies {
 }
 apply plugin: 'app-packager'
 
-def title = "Uncle小说"
+def title = "UncleNovel"
 
 // 初始化本地运行环境
 def initAppRuntimeEnv() {

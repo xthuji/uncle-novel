@@ -85,3 +85,12 @@
 
 ![Star History Chart](https://api.star-history.com/svg?repos=uncle-novel/uncle-novel&type=Date)
 
+
+#### 打包前注意
+* 项目引用了 jfx-launcher-1.1.11-SNAPSHOT.jar 包，这个包无法在远程仓库中获取(只有RELEASE的)，需要自行下载jfx-launcher项目后在本地进行构建
+* jfx-launcher项目
+  * 打包前，请注意在Gradle的publishing repositories 配置中添加 mavenLocal()，发布jar包时自动同步到本地Maven仓库中
+  * 使用 gradle :publishToMavenLocal 命令打包jar文件并发布到本地Maven仓库中
+* uncle-novel项目
+  * 打包前，请注意在Gradle相关配置中添加 mavenLocal()，优先使用 maven 本地仓库
+  * 使用 ./gradlew :app:packageMac 命令打包
